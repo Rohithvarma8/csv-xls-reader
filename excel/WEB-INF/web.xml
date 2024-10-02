@@ -1,0 +1,23 @@
+<web-app>
+    <!-- Security constraint -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>xlsAccess</web-resource-name>
+            <url-pattern>*.xls</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name> 
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Authentication mechanism -->
+    <login-config>
+        <auth-method>BASIC</auth-method> 
+        <realm-name>xlsRealm</realm-name> <!-- Realm name for authentication -->
+    </login-config>
+
+    <!-- Security role -->
+    <security-role>
+        <role-name>user</role-name> <!-- Define the user role -->
+    </security-role>
+</web-app>
